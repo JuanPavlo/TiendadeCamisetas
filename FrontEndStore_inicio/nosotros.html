@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FrontEnd Tienda</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+    
+    <header class="header"> <!-- la cabecera de una pagina -->
+        <a href="index.html">
+            <img class="header__logo" src="img/logo.png" alt="logo">
+        </a>
+    </header>
+
+    <nav class="navegacion">
+        <a class="navegacion__enlace" href="index.html">Tienda</a>
+        <a class="navegacion__enlace navegacion__enlace--activo" href="nosotros.html">Nosotros</a>
+    </nav>
+
+    <main class="contenedor">
+        <h1>Sobre Nosotros</h1>
+        <!--
+        <div class="division">
+            <img class="imagen" src="img/nosotros.jpg" alt="imagenNosotros">
+            <p class="texto">Maecenas congue nisl ac orci auctor, id varius dolor scelerisque. Aliquam lacinia metus nibh, id viverra purus scelerisque in. Cras cursus urna vitae dolor consectetur ornare. Aenean lorem dolor, tincidunt at fermentum sed, fringilla et lacus. Vivamus commodo sed massa in consectetur. Quisque consequat dignissim sapien ut interdum. Phasellus quis velit tortor. Aenean aliquet, urna in porta consequat, orci metus fringilla nulla, quis posuere sem nunc a ligula.
+
+                Nunc hendrerit nibh eget odio sollicitudin, in vehicula lorem accumsan. Pellentesque congue sem in faucibus finibus. In fringilla, arcu et consequat varius, neque sem eleifend est, molestie lacinia arcu odio ac sapien. Nunc hendrerit orci urna, ac condimentum mauris laoreet ac. Fusce convallis ac orci a tristique. Mauris blandit diam vitae felis cursus rutrum. Donec faucibus interdum cursus. Nunc id lacinia risus, sit amet sollicitudin odio. Phasellus eget lectus ante. Morbi pellentesque ornare placerat. Fusce pellentesque ultrices viverra. In eros purus, porttitor eu metus ac, condimentum venenatis lorem. Maecenas faucibus iaculis turpis, ac porta neque consequat nec. Fusce fringilla leo vitae elementum hendrerit. Morbi neque orci, faucibus vitae justo in, mattis viverra ligula. Proin ornare mi nisl, in finibus magna consectetur nec.</p>
+        </div>
+        Como lo hice yo -->
+        <div class="nosotros"> <!-- este sera el bloque -->
+            <div class="nosotros__contenido">
+                <p>Nunc hendrerit nibh eget odio sollicitudin, in vehicula lorem accumsan. Pellentesque congue sem in faucibus finibus. In fringilla, arcu et consequat varius, neque sem eleifend est, molestie lacinia arcu odio ac sapien. Nunc hendrerit orci urna, ac condimentum mauris laoreet ac. Fusce convallis ac orci a tristique. Mauris blandit diam vitae felis cursus rutrum. Donec faucibus interdum cursus. Nunc id lacinia risus, sit amet sollicitudin odio. Phasellus eget lectus ante. Morbi pellentesque ornare placerat. Fusce pellentesque ultrices viverra. In eros purus, porttitor eu metus ac, condimentum venenatis lorem.
+                </p>
+                <p>Curabitur semper mi sodales elit faucibus, sed elementum ex fringilla. Phasellus sed nisl sollicitudin metus posuere volutpat. Pellentesque sit amet turpis augue. Aenean in eros venenatis lorem faucibus interdum. Nulla a porta quam. Nulla vitae fringilla odio, non pharetra dui. 
+                </p> 
+            </div>
+            <img class="nosotros__imagen" src="img/nosotros.jpg" alt="imagen nosotros">
+        </div>
+    </main>
+
+    <section class="contendeor comprar">
+        <h2 class="comprar__titulo">¿Porqué comprar con nosotros?</h2>
+        <div class="bloques">
+            <div class="bloque"> 
+                <img class="bloque__imagen" src="img/icono_1.png" alt="icono1">
+                <h3 class="bloque__titulo">El mejor precio</h3>
+                <p>Nunc hendrerit nibh eget odio sollicitudin, in vehicula lorem accumsan. Pellentesque congue sem in faucibus finibus.</p>
+            </div> <!-- cierre .bloque-->
+            <div class="bloque"> 
+                <img class="bloque__imagen" src="img/icono_2.png" alt="icono2">
+                <h3 class="bloque__titulo">Para Devs</h3>
+                <p>Nunc hendrerit nibh eget odio sollicitudin, in vehicula lorem accumsan. Pellentesque congue sem in faucibus finibus.</p>
+            </div> <!-- cierre .bloque-->
+            <div class="bloque"> 
+                <img class="bloque__imagen" src="img/icono_3.png" alt="icono3">
+                <h3 class="bloque__titulo">Envio gratis</h3>
+                <p>Nunc hendrerit nibh eget odio sollicitudin, in vehicula lorem accumsan. Pellentesque congue sem in faucibus finibus.</p>
+            </div> <!-- cierre .bloque-->
+            <div class="bloque"> 
+                <img class="bloque__imagen" src="img/icono_4.png" alt="icono4">
+                <h3 class="bloque__titulo">La mejor calidad</h3>
+                <p>Nunc hendrerit nibh eget odio sollicitudin, in vehicula lorem accumsan. Pellentesque congue sem in faucibus finibus.</p>
+            </div> <!-- cierre .bloque-->
+        </div> <!-- cierre .bloques-->
+    </section>
+
+    <footer class="footer"> 
+        <p class="footer__texto">Front End Store - Todos los derechos reservados 2020.</p>
+    </footer>
+
+</body>
+</html>

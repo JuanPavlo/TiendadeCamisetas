@@ -1,0 +1,283 @@
+:root { /* Pseudo elemento osea un elemento que no existe pero sirve para crear variables */
+    --primario: #9C27B0;
+    --primarioOscuro: #89119D;
+    --secundario: #FFCE00;
+    --secundarioOscuro: rgb(233, 287, 2); /* Es un color un poco mas oscuro que el secundario */
+    --blanco: #FFFFFF;
+    --negro: #000000;
+
+    --fuentePrincipal: 'Staatliches', cursive; /* Asi es mas facil en caso de que se quiera cambiar la fuente */
+}
+/* apply a natural box layout model to all elements, but allowing components to change */
+html {
+    box-sizing: border-box; /* Es para que seleccione todo */
+    font-size: 62.5%; /* Esto es una parte para que un rem se adapte y equivalga a 10 px */
+}
+*, *:before, *:after {
+    box-sizing: inherit; /* El box model es para el tamaño de lo que se muestra en pantalla */
+}
+
+/* GLOBALES */
+
+body{
+    background-color: var(--primario); /* Fondo de la pagina */
+    font-size: 1.6rem; /* El tamaño de la fuente */
+    line-height: 1.5; /* Le da un interlineado de 1.5 de la base de la fuente */
+}
+p {
+    font-size: 1.8rem;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--blanco);
+}
+a {
+    text-decoration: none;
+}
+img {
+    width: 100%; /* Para que ocupe el 100% del espacio */
+}
+.contenedor {
+    max-width: 120rem;
+    margin: 0 auto; /* Para que se alinea al centro automaticamente */
+}
+h1, h2, h3 {
+    text-align: center;
+    color: var(--secundario);
+    font-family: var(--fuentePrincipal);
+}
+h1 {
+    font-size: 4rem;
+}
+h2 {
+    font-size: 3.2rem;
+}
+h3 {
+    font-size: 2.4rem;
+}
+
+/* HEADER */
+
+.header {
+    display: flex;
+    justify-content: center; /* Para centrar el logo */
+}
+.header__logo {
+    margin: 3rem 0; /* Se le pone margen arriba y abajo pero no en los lados es para separar el logo del la parte de arriba */
+}
+
+/* FOOTER */
+
+.footer {
+    background-color: var(--primarioOscuro);
+    padding: 1rem 0;
+    margin-top: 2rem;
+}
+.footer__texto {
+    text-align: center; /* Alinea el texto al centro */
+    font-size: 2.2rem;
+}
+
+/* NAVEGACION */
+
+.navegacion {
+    background-color: var(--primarioOscuro);
+    padding: 1rem 0;
+    display: flex;
+    justify-content: center;
+    /*gap: 2rem;  Es para separar los elementos */
+}
+.navegacion__enlace {
+    font-family: var(--fuentePrincipal);
+    color: var(--blanco);
+    font-size: 3rem; /* Para hacer la letra mas grande */
+    margin-right: 2rem; /* Separa los dos elementos pero queda mas recargado del lado izquierdo */
+}
+.navegacion__enlace:last-of-type { /* selecciona el ultimo tipo de navegacion__enlace osea el nosotros */ 
+    margin-right: 0; /* se compensa para que quede bien entrado los enlaces */
+}
+.navegacion__enlace--activo,
+.navegacion__enlace:hover { /* Para cuando esta el mouse encima del enlace */
+    color: var(--secundario);
+}
+
+/* GRID */
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 2rem;
+    row-gap: 2rem;
+}
+@media (min-width: 768px) {
+    .grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* PRODUCTOS */
+
+.producto {
+    background-color: var(--primarioOscuro);
+    padding: 1rem;
+}
+.producto__imagen {
+    width: 100%;/* Para decirle a la imagen que debe tener un ancho del 100% en la pagina */
+}
+.producto__nombre {
+    font-size: 4rem;
+    color: var(--blanco);
+}
+.producto__precio {
+    font-size: 2.8rem;
+    color: var(--secundario);
+}
+.producto__nombre, 
+.producto__precio {
+    font-family: var(--fuentePrincipal);
+    margin: 1rem 0;
+    text-align: center;
+    line-height: 1.2;
+}
+
+/* GRAFICO */
+.grafico {
+    min-height: 30rem;
+    background-repeat: no-repeat;/* Para que las imagenes no se repitan */
+    background-size: cover; /* es para que la imagen use todo el espacio disponible */
+}
+.grafico--camisas {
+    grid-row: 2 / 3;/* Para posicionar en la fila 2 a 3 */
+    grid-column: 1 / 3;/* Para posicionar en la columna 1 a 3 */
+    background-image: url(../img/grafico1.jpg);
+}
+.grafico--node {
+    grid-column: 1 / 3; /* Es para decir que en los celulares se muestre de la columna 1 a la 3 para que se vea bien */ 
+    grid-row: 8 / 9;
+    background-image: url(../img/grafico2.jpg);
+}
+@media (min-width: 768px) { /* se debe poner aqui el grafico node porque usa de la columna 2 a la 4 haciendo que se muestre mal en los celulares */
+    .grafico--node {
+        grid-row: 5 / 6;
+        grid-column: 2 / 4;
+    }
+}
+
+/* NOSOTROS */
+
+/*
+.division {
+    display: grid;
+}
+.texto {
+    text-align: left;
+    font-size: 1.5rem;
+}
+@media (min-width: 768px) {
+    .texto {
+        grid-column: 1 / 1;
+        grid-row: 1 / 1;
+        margin-right: 5rem;
+    }
+    .division {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+Lo que hice yo */
+
+.nosotros {
+    display: grid;
+    grid-template-rows: repeat(2, auto);
+}
+.nosotros__imagen {
+    grid-row: 1 / 2;
+    width: 100%;
+}
+@media (min-width: 768px) {
+    .nosotros {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 2rem; /* Es para separar las columnas */
+    }
+    .nosotros__imagen {
+        grid-column: 2 / 2;
+    }
+}
+
+/* BLOQUES */
+
+.bloques {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+@media (min-width: 768px) {
+    .bloques {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+.bloque {
+    text-align: center;
+}
+.bloque__titulo {
+    margin: 0; /* para que los heading no tengan margen */
+}
+.bloque__imagen {
+    max-width: 100%;
+}
+
+/* PAGINA DEL PRODUCTO */
+
+.botoncito:hover {
+    cursor: pointer; /* es para que al pasar sobre un boton salga una mano referenciando que es boton */
+}
+@media (min-width: 768px) {
+    .botoncito{
+        /* para que se reinicie a su tamaño normal */
+        width: auto;
+    }
+}
+@media (min-width: 768px) {
+    .camisa {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 2rem;
+    }
+} 
+.formulario {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem; /* Para darle espacio entre columnas */
+}
+.formulario__campo {
+    border-color: var(--primarioOscuro);
+    border-width: 1rem; /* para darle el grosor del borde */
+    border-style: solid; /* hace una linea solida en el borde */
+    background-color: transparent;
+    color: var(--negro);
+    font-size: 2rem;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 1rem;
+    width: 90%;
+}
+.formulario__submit {
+    background-color: var(--secundario);
+    border: none; /* todos los input tienen un borde por lo que es mejor quitarlo para que se vea mejor */
+    font-size: 2rem;
+    font-family: var(--fuentePrincipal);
+    padding: 2rem;
+    transition: background-color .5s ease;
+    grid-column: 1 / 3;
+    /* para que el boton ocupe el 90 porciento del espacio */
+    width: 90%;
+    text-align: center;
+    border-radius: 0.5rem;
+}
+@media (min-width: 768px) {
+    .formulario__campo,
+    .formulario__submit{
+        /* para que se reinicie a su tamaño normal */
+        width: auto;
+    }
+}
+.formulario__submit:hover {
+    cursor: pointer; /* para que cuando se pose sobre el boton el mouse se muestre para ser clikeable*/
+    background-color: var(--secundarioOscuro);
+}
